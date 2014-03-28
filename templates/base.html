@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} My base template {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax.js' %}"></script>
+</head>
+<body>
+
+    <div id="page">
+    <div id="sidebar">
+        {%  block sidebar %}
+        <ul>
+            <li><a href="/articles/all">Articles</a></li>
+            <li><a href="/admin/">Adminka</a></li>
+            <li><a href="/accounts/login/">Login in</a></li>
+            <li><a href="/accounts/register/">Registration</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}This is the content area{% endblock %}
+        <img src="{% static "assets/img/python-logo.png" %}" />
+    </div>
+
+    </div>
+
+</body>
+</html>
